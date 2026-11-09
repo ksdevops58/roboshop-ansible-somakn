@@ -1,0 +1,20 @@
+- name: create ec2 instances and r53 records
+  hosts: local
+  connection: local
+  vars:
+    instances: ["mongodb" , "redis" , "mysql" , "rabbitmq"]
+    action: create
+    domain-name: daws92somasekhar.store
+    ami-id: ami-0055977a6e828a4f4
+  tasks:
+  - name: creae ec2 instances
+    amazon.aws.ec2-instance:
+      name: "roboshop-{{ item }}"
+      image-id: "{{ ami-id }}"
+      instance-type: t3.micro
+      security-groups:
+      - roboshop-common
+      - roboshop-"{{ item }}"
+      region: us-east-1
+    loop: "{{ instances }}"
+    when: action == create
