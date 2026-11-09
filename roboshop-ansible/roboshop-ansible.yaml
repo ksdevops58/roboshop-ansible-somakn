@@ -4,13 +4,13 @@
   vars:
     instances: ["mongodb" , "redis" , "mysql" , "rabbitmq"]
     action: create
-    domain-name: daws92somasekhar.store
-    ami-id: ami-0055977a6e828a4f4
+    domain_name: daws92somasekhar.store
+    ami_id: ami-0055977a6e828a4f4
   tasks:
   - name: creae ec2 instances
-    amazon.aws.ec2-instance:
+    amazon.aws.ec2_instance:
       name: "roboshop-{{ item }}"
-      image-id: "{{ ami-id }}"
+      image-id: "{{ ami_id }}"
       instance-type: t3.micro
       security-groups:
       - roboshop-common
