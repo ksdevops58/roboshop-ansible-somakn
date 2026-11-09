@@ -5,7 +5,7 @@
   - name: copy mongo repo
     copy:
       src: mongodb.repo
-      dest: /etc/yum.repo/mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
   - name: test
     debug:
       msg: "{{ app_name }}"
