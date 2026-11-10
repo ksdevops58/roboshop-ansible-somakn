@@ -11,8 +11,8 @@
       state: present
 
   - name: Enable and start mysql server
-    service: mysql
-    state: start
+    service: mysqld
+    state: started
     enabled: yes
 
   - name: stup mysql root password
