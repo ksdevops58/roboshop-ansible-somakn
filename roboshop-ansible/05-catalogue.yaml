@@ -64,6 +64,6 @@
 
   - name: install mongodb-client
     dnf:
-      name: mongodb-mongodb_host
+      name:  mongodb-mongosh
       state: present
       
