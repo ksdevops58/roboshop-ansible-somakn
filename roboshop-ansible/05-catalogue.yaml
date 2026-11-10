@@ -30,7 +30,8 @@
   - name: remove catalogue.zip
     file:
       path: /tmp/catalogue.zip
-
+      state: absent
+      
   - name: create app directory
     file:
       path: /app
