@@ -35,7 +35,7 @@
       state: absent
       zone: "{{ domain_name }}"
       record: "{{ item }}.{{ domain_name }}"
-      ttl: 1
+      ttl: 300
       type: A
     loop: "{{  instances }}"
     when: action == "delete"
