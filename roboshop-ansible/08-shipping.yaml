@@ -9,5 +9,5 @@
     dnf:
       name:
       - maven
-      - java-25-openjdk-devel -y
+      - java-25-openjdk-devel
       state: present
