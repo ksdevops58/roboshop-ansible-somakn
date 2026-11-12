@@ -9,3 +9,4 @@ user_host: user.sdaws1.store
 cart_host: cart.sdaws1.store
 shipping_host: shipping.sdaws1.store
 payment_host: payment.sdaws1.store
+mysql_host: mysql.sdaws1.store
