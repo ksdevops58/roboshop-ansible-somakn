@@ -12,3 +12,5 @@ payment_host: payment.sdaws1.store
 mysql_host: mysql.sdaws1.store
 shipping_db_user: shipping
 shipping_db_password: RoboShop@1
+rabbitmq_user: roboshop
+rabbitmq_password: roboshop123
