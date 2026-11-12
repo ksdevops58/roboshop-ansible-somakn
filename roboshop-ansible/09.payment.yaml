@@ -1,5 +1,5 @@
 - name: configure payment service
-  host: payment
+  hosts: payment
   become: yes
   tasks:
   - name: install python3.14
