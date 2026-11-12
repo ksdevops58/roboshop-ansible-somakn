@@ -52,4 +52,4 @@
       name: nginx
       state: restarted
       tags:
-        fts
+      - fts
