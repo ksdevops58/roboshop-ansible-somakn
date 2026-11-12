@@ -18,11 +18,11 @@
   
   - name: find all contents inside the directory
     ansible.builtin.find:
-    paths: /usr/share/nginx/html
-    recurse: true
-    file_type: any
-    hidden: true
-  register: dir_contents
+      paths: /usr/share/nginx/html
+      recurse: true
+      file_type: any
+      hidden: true
+    register: dir_contents
 
 
 - name: delete the discovered content
