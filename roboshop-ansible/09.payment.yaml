@@ -46,7 +46,7 @@
       remote_src: yes
 
   - name: name install dependencies in virtual environment
-    ansible_builtin.pip:
+    ansible.builtin.pip:
       requirements: /app/requirements.pip
       virualenv: /app/.venv
       virtualenv_command: python3.14 -m venv
