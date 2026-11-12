@@ -97,7 +97,7 @@
   - name: print cities_count
     debug:
       msg: "{{ cities_count }}"
-      tags:
+    tags:
         mysql
 
   - name: load cities data into mysql
