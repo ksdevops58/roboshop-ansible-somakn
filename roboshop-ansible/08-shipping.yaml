@@ -95,4 +95,24 @@
     debug:
       msg: "{{ cities_count }}"
 
+  - name: load data into mysql
+    shell: mysql -h "{{ mysql_host }}" -u root -p{{ mysql_root_password }} < /app/db/app-user.sql
+    when: cities_count != 0 or cities_count.stdout | int == 0
+
+  - name: load data into mysql
+    shell: mysql -h "{{ mysql_host }}" -u root -p{{ mysql_root_password }} < /app/db/app-user.sql
+
+  - name: copy shipping service file
+    template: 
+      src: shipping.service.j2
+      dest: /etc/systemd/system/shipping.service
   
+  - name: daemon reload
+    systemd_service:
+      daemon_reload: true
+  
+  - name: start and enable shipping
+    service:
+      name: shipping
+      state: restarted
+      enabled: yes

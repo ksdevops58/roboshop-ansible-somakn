@@ -10,3 +10,5 @@ cart_host: cart.sdaws1.store
 shipping_host: shipping.sdaws1.store
 payment_host: payment.sdaws1.store
 mysql_host: mysql.sdaws1.store
+shipping_db_user: shipping
+shipping_db_password: RoboShop@1
