@@ -25,11 +25,11 @@
     register: dir_contents
 
 
-- name: delete the discovered content
-  ansible.builtin.file:
-    path: "{{ item.path }}"
-    state: absent
-  loop: "{{ dir_contents.files }}"
+  - name: delete the discovered content
+    ansible.builtin.file:
+      path: "{{ item.path }}"
+      state: absent
+    loop: "{{ dir_contents.files }}"
 
 - name: Downloading frontend application
   get_url:
