@@ -90,17 +90,25 @@
   - name: check cities data exists or network
     command: mysql -h "{{ mysql_host }}" -u root -p{{ mysql_root_password }} -N -B -e "SELECT COUNT(*) FROM cities.cities;"
     register: cities_count
+    tags:
+      mysql
 
   - name: print cities_count
     debug:
       msg: "{{ cities_count }}"
+      tags:
+        mysql
 
   - name: load data into mysql
     shell: mysql -h "{{ mysql_host }}" -u root -p{{ mysql_root_password }} < /app/db/app-user.sql
     when: cities_count != 0 or cities_count.stdout | int == 0
+    tags:
+      mysql
 
   - name: load data into mysql
     shell: mysql -h "{{ mysql_host }}" -u root -p{{ mysql_root_password }} < /app/db/app-user.sql
+    tags:
+      mysql
 
   - name: copy shipping service file
     template: 
